@@ -152,7 +152,7 @@ install() {
 java() {
     $ACTION docker exec -e USER_AGENT=Travis -u root $CID mkdir -p /opt/omero/$COMPONENT/OMERO.$COMPONENT/lib # Web!
     $ACTION docker exec -e USER_AGENT=Travis -u root $CID /opt/omero/$COMPONENT/venv3/bin/pip install omego
-    $ACTION docker exec -e USER_AGENT=Travis -u root $CID /opt/omero/$COMPONENT/venv3/bin/pip install omego==0.8.0rc1
+    $ACTION docker exec -e USER_AGENT=Travis -u root $CID /opt/omero/$COMPONENT/venv3/bin/pip install omego
     $ACTION docker exec -e USER_AGENT=Travis -u root $CID /opt/omero/$COMPONENT/venv3/bin/omego download java --sym /opt/omero/java
     $ACTION docker exec -u root $CID ln -s /opt/omero/java/libs /opt/omero/web/OMERO.web/lib/client
 }
